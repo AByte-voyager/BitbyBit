@@ -1,0 +1,84 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "station_name": {
+      "type": "string",
+      "description": "Name of the LRT station"
+    },
+    "station_city": {
+      "type": "string",
+      "enum": [
+        "Edmonton",
+        "Calgary"
+      ],
+      "description": "City where the station is located"
+    },
+    "issue_category": {
+      "type": "string",
+      "enum": [
+        "Slippery Surface",
+        "Blocked Access",
+        "Broken Elevator",
+        "Lighting Issue",
+        "Vandalism",
+        "Safety Concern",
+        "Other"
+      ],
+      "description": "Category of the reported issue"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the issue"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "URL of uploaded photo"
+    },
+    "urgency_level": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "default": "Medium",
+      "description": "Urgency level of the issue"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Submitted",
+        "Under Review",
+        "In Progress",
+        "Resolved",
+        "Closed"
+      ],
+      "default": "Submitted",
+      "description": "Current status of the report"
+    },
+    "inspector_notes": {
+      "type": "string",
+      "description": "Notes added by inspector"
+    },
+    "reporter_contact": {
+      "type": "string",
+      "description": "Optional contact info from reporter"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "GPS latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "GPS longitude"
+    }
+  },
+  "required": [
+    "station_name",
+    "station_city",
+    "issue_category",
+    "description"
+  ]
+}
